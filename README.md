@@ -31,7 +31,7 @@ The navigation is strategically structured to prioritize user intent, placing th
 | | | [Blog](#) |
 
 ---
-## Inspiration 
+## 💡 Inspiration 
 * https://ismashusa.com/
 * https://badaxethrowing.com/
 * https://doubleedgeaxes.com/
