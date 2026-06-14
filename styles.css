@@ -285,10 +285,10 @@ footer a:hover {
   border-radius: 0;
 }
 
-/* Updated Background targeting Logo */
-.logo-bg-hero {
-  background-image: url('logo.png'); /* Swap to background logo image */
-  background-size: cover; /* Change to 'contain' or 'auto' if logo pattern is desired */
+/* Updated Background targeting sample photo */
+.event-bg-hero {
+  background-image: url('sample-photo.jpg'); 
+  background-size: cover; 
   background-position: center;
   background-color: var(--primary); /* Fallback */
 }
