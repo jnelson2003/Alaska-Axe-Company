@@ -15,7 +15,7 @@
         </div>
     </div>
     
-    <header>
+    <header class="transparent-header">
       <nav aria-label="Main Navigation">
         <a href="index.html" class="logo-link" aria-label="Alaska Axe Company Home">
           <img src="logo.png" alt="Alaska Axe Company Logo" class="header-logo" />
@@ -263,23 +263,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-      // Mobile Navigation Logic
-      const hamburger = document.querySelector('.hamburger-btn');
-      const navMenu = document.querySelector('.main-nav');
-      const closeBtn = document.querySelector('.close-menu-btn');
-      const overlay = document.querySelector('.mobile-nav-overlay');
-
-      function toggleMenu() {
-        navMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        // Prevent body from scrolling when menu is open
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
-      }
-
-      hamburger.addEventListener('click', toggleMenu);
-      closeBtn.addEventListener('click', toggleMenu);
-      overlay.addEventListener('click', toggleMenu);
-    </script>
   </body>
 </html>
