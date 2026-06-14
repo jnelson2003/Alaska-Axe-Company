@@ -1,35 +1,25 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Groups & Events | Alaska Axe Throwing Co.</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-  </head>
-  <body>
-    
-    <div id="loader">
-        <div class="axe-spinner">
-            <img src="Axe Asset.png" alt="Loading Axe..." style="width: 80px; height: auto; display: block;" />
-        </div>
-    </div>
-    
+<!-- ========================================= -->
+    <!-- HEADER & NAVIGATION                       -->
+    <!-- ========================================= -->
     <header class="transparent-header">
       <div class="header-container">
         
+        <!-- Logo (Always on the left for both Desktop & Mobile) -->
+        <a href="index.html" class="logo-link" aria-label="Alaska Axe Company Home">
+          <img src="logo.png" alt="Alaska Axe Company Logo" class="header-logo" />
+        </a>
+
+        <!-- Mobile Menu Toggle Button (Hidden on Desktop, shows on the right for Mobile) -->
         <button class="hamburger-btn" aria-label="Open Menu">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </button>
 
-        <a href="index.html" class="logo-link" aria-label="Alaska Axe Company Home">
-          <img src="logo.png" alt="Alaska Axe Company Logo" class="header-logo" />
-        </a>
-
+        <!-- Dark Overlay for Mobile Menu -->
         <div class="mobile-nav-overlay"></div>
 
+        <!-- Navigation Links (Spans across desktop, slides out from right on mobile) -->
         <nav class="main-nav" aria-label="Main Navigation">
           <button class="close-menu-btn" aria-label="Close Menu">&times;</button>
           <a href="index.html">Home</a>
