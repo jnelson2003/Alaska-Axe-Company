@@ -57,7 +57,7 @@ footer {
   padding: 1.25rem 2rem; 
 }
 
-/* Transparent Header (Allows hero image behind) */
+/* Added to allow photo to sit under the header */
 .transparent-header {
   position: absolute;
   top: 0;
@@ -65,13 +65,6 @@ footer {
   width: 100%;
   background: transparent;
   z-index: 100;
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
 }
 
 main {
@@ -86,10 +79,11 @@ main {
 }
 
 /* =========================================
-   4. NAVIGATION (Desktop)
+   4. NAVIGATION
    ========================================= */
-.main-nav {
+nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.25rem; 
 }
@@ -107,21 +101,19 @@ main {
   display: block;
 }
 
-/* Hide mobile elements on desktop */
-.hamburger-btn, 
-.close-menu-btn,
-.mobile-nav-overlay {
-  display: none;
+footer nav {
+  gap: 1.5rem;
+  justify-content: center; 
 }
 
 /* =========================================
    5. LINKS & BUTTONS
    ========================================= */
-.main-nav a {
+nav a {
   color: #fff;
   text-decoration: none;
-  font-weight: 600; 
-  font-size: 1.15rem; 
+  font-weight: 600; /* Made slightly bolder */
+  font-size: 1.15rem; /* Increased size for header text */
   transition: color 0.2s ease-in-out; 
 }
 
@@ -132,8 +124,8 @@ footer a {
   transition: color 0.2s ease-in-out; 
 }
 
-.main-nav a:hover,
-.main-nav a.active, 
+nav a:hover,
+nav a.active, 
 footer a:hover {
   text-decoration: none; 
   color: var(--accent);
@@ -149,7 +141,7 @@ footer a:hover {
   border-radius: 6px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1rem !important; 
+  font-size: 1rem !important; /* Keep button text normal size */
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -193,11 +185,15 @@ footer a:hover {
   color: var(--accent) !important;
 }
 
+.full-width {
+  width: 100%;
+}
+
 /* =========================================
    6. PAGE SECTIONS & TYPOGRAPHY
    ========================================= */
 .page-section {
-  padding: 3rem 0; 
+  padding: 3rem 0; /* Reduced spacing */
   border-bottom: 1px solid #dcd7ce;
 }
 
@@ -206,7 +202,7 @@ footer a:hover {
 }
 
 .pt-large {
-  padding-top: 4rem; 
+  padding-top: 4rem; /* Reduced spacing */
 }
 
 .section-title {
@@ -222,10 +218,11 @@ footer a:hover {
 .lead-text { font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.8; }
 .relative-z { position: relative; z-index: 2; }
 
+/* Replaced Slanted Backgrounds with Flat Colors */
 .bg-primary {
   background: var(--primary);
   color: #fff;
-  padding: 4rem 0; 
+  padding: 4rem 0; /* Controlled padding for background sections */
 }
 
 .bg-accent {
@@ -237,6 +234,56 @@ footer a:hover {
 /* =========================================
    7. HERO SECTIONS
    ========================================= */
+/* Original Hero */
+.hero {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 1.2rem;
+  color: var(--accent-light);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: #fff;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hero-text {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 1.5rem auto;
+  color: var(--bg);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.tag-row span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Left-Aligned Logo Hero */
 .photo-hero {
   position: relative;
   min-height: 80vh;
@@ -246,7 +293,7 @@ footer a:hover {
   align-items: flex-start; 
   color: #fff;
   text-align: left; 
-  padding: 8rem 5% 6rem; 
+  padding: 8rem 5% 6rem; /* Increased top padding to account for transparent header */
   border-radius: 0;
 }
 
@@ -254,7 +301,7 @@ footer a:hover {
   background-image: url('example-photo.jpg'); 
   background-size: cover; 
   background-position: center;
-  background-color: var(--primary); 
+  background-color: var(--primary); /* Fallback */
 }
 
 .hero-overlay {
@@ -270,9 +317,10 @@ footer a:hover {
 .hero-content h1 { font-size: 4.5rem; color: #fff; line-height: 1.1; margin-bottom: 1rem; }
 .hero-content .hero-text { margin-left: 0; } 
 
+/* New Static Banner Tags (Replaced Marquee) */
 .hero-tags-banner {
   position: absolute; bottom: 0; left: 0; width: 100%;
-  background: var(--accent-light); 
+  background: var(--accent-light); /* Changed to your light blue variable */
   padding: 1rem 0; z-index: 2;
   border-top: 1px solid #5B859D;
 }
@@ -292,6 +340,12 @@ footer a:hover {
   color: #fff;
 }
 
+@media (max-width: 768px) {
+  .tag-row-banner { gap: 1rem; }
+  .tag-row-banner span { font-size: 0.9rem; }
+}
+
+
 /* =========================================
    8. GRID, CARDS & SPLIT LAYOUTS
    ========================================= */
@@ -301,6 +355,35 @@ footer a:hover {
   gap: 2rem;
 }
 
+/* Original Card */
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-top: 4px solid var(--accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.card-featured {
+  border-top: 4px solid var(--primary);
+  background: #faf8f5;
+  transform: scale(1.02);
+}
+
+/* New Sleek Photo Cards */
 .sleek-photo-card {
   position: relative; height: 350px; overflow: hidden; border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -320,12 +403,26 @@ footer a:hover {
 
 .card-overlay h3 { margin: 0; font-size: 1.6rem; letter-spacing: 1px; color: #fff; }
 
+/* Split Layout */
 .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .split-image img { width: 100%; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+
+@media (max-width: 768px) {
+  .split-layout { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 3rem; }
+}
 
 /* =========================================
    9. LISTS & CALLOUTS (AXE BULLETS)
    ========================================= */
+.highlight-section {
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+/* Axe Bullets globally applied across lists */
 .feature-list li::before,
 .sleek-bullet-list li::before,
 .axe-list li::before {
@@ -336,6 +433,21 @@ footer a:hover {
   color: var(--primary);
   background: transparent; 
   font-size: 1.1rem;
+  width: auto;
+  height: auto;
+}
+
+.feature-list {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  position: relative;
 }
 
 .sleek-bullet-list { list-style: none; padding: 0; margin-bottom: 2rem; }
@@ -357,18 +469,45 @@ footer a:hover {
   transform: translateY(-50%);
 }
 
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  font-weight: 500;
+}
+
+/* Photo Feature Grid */
 .features-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 3rem; }
 
 .feature-photo-box {
-  background: #fff; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  overflow: hidden; text-align: center; transition: transform 0.3s ease;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.feature-photo-box:hover { transform: translateY(-5px); }
-.feature-photo-box img { width: 100%; height: 180px; object-fit: cover; display: block; }
-.feature-content { padding: 1.5rem; }
+.feature-photo-box:hover {
+  transform: translateY(-5px);
+}
+
+.feature-photo-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-content {
+  padding: 1.5rem;
+}
+
 .feature-content h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem; }
 .feature-content p { font-size: 0.95rem; margin-bottom: 0; color: var(--accent-dark); }
+
 
 /* =========================================
    10. PHOTO-BASED EVENT PACKAGES
@@ -380,13 +519,24 @@ footer a:hover {
   transition: transform 0.3s ease; overflow: hidden; display: flex; flex-direction: column;
 }
 
-.package-photo-card img { width: 100%; height: 220px; object-fit: cover; }
+.package-photo-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
 .package-photo-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-.package-content { padding: 2rem; flex-grow: 1; }
+
+.package-content {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
 .package-content h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 0.5rem; }
 .package-desc { color: var(--accent-dark); font-style: italic; min-height: 48px; }
 .package-content hr { border: none; border-top: 2px solid var(--bg); margin: 1.5rem 0; }
 
+/* Featured Photo Card */
 .featured-package {
   background: var(--primary); color: #fff; border: none; transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(25, 46, 59, 0.2); position: relative; z-index: 2;
@@ -399,7 +549,7 @@ footer a:hover {
 .featured-package .axe-list li::before { color: var(--accent-light); }
 
 .popular-tag {
-  position: absolute; top: 15px; left: 50%; transform: translateX(-50%);
+  position: absolute top: 15px; left: 50%; transform: translateX(-50%);
   background: var(--accent); color: #fff; padding: 0.3rem 1rem; border-radius: 20px;
   font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;
   z-index: 3; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -417,7 +567,7 @@ footer a:hover {
 }
 
 .conversion-container {
-  max-width: 1000px;
+  max-width: 1000px; /* Increased to allow split layout */
   margin: 0 auto;
 }
 
@@ -428,205 +578,380 @@ footer a:hover {
    12. LOADING SCREEN
    ========================================= */
 #loader {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
-  background: var(--bg); display: flex; justify-content: center; align-items: center;
-  z-index: 9999; transition: opacity 0.4s ease, visibility 0.4s ease; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; 
+  background: var(--bg); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+  transition: opacity 0.4s ease, visibility 0.4s ease; 
 }
-.axe-spinner { font-size: 5rem; animation: spin 1s linear infinite; transform-origin: center center; }
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-.loader-hidden { opacity: 0; visibility: hidden; }
+
+.axe-spinner {
+  font-size: 5rem; 
+  animation: spin 1s linear infinite; 
+  transform-origin: center center; 
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 
 /* =========================================
    13. FOOTER
    ========================================= */
 .site-footer {
-  background: var(--primary); color: #fff; padding: 4rem 2rem 1rem; font-size: 0.95rem;
-}
-.footer-container {
-  max-width: 1200px; margin: 0 auto; display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;
-}
-.footer-column { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.footer-heading { font-family: 'Oswald', sans-serif; font-size: 1.2rem; color: var(--accent); margin-bottom: 1.5rem; text-transform: uppercase; }
-.footer-column nav { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; width: 100%; }
-.footer-address { font-style: normal; line-height: 1.4; margin-bottom: 1rem; }
-.footer-address p { margin: 0; color: #ccc; }
-.footer-phone a { font-weight: 700; font-size: 1.1rem; color: var(--accent-light); }
-.footer-social { margin-top: 1.5rem; font-weight: bold; }
-.footer-bottom {
-  max-width: 1200px; margin: 0 auto; padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; font-size: 0.85rem; color: #aaa;
+  background: var(--primary);
+  color: #fff;
+  padding: 4rem 2rem 1rem; 
+  font-size: 0.95rem;
 }
 
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-heading {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  color: var(--accent); 
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.footer-column nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center; 
+  width: 100%;
+}
+
+.footer-column a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: var(--accent);
+}
+
+.footer-address {
+  font-style: normal; 
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.footer-address p {
+  margin: 0;
+  color: #ccc;
+}
+
+.footer-phone a {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-light);
+}
+
+.footer-social {
+  margin-top: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+}
 
 /* =========================================
-   14. MOBILE RESPONSIVENESS FIXES
+   14. TESTIMONIALS SECTION 
+   ========================================= */
+.testimonials-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 61.25rem) {
+  .testimonials-wrapper {
+    column-gap: 3rem;
+  }
+}
+
+.testimonials-cards {
+  grid-column: span 12;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 61.25rem) {
+  .testimonials-cards {
+    grid-column: span 5;
+  }
+}
+
+.testimonial-card {
+  cursor: pointer;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.5rem;
+  align-items: center;
+  transition: 0.3s;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.testimonial-card img {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+
+.testimonial-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.testimonial-card p {
+  text-transform: capitalize;
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.testimonial-card.active {
+  background: #fff;
+  border: 2px solid rgba(25, 46, 59, 0.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.testimonial-card.active img {
+  filter: grayscale(0);
+}
+
+.testimonial-card .gradient {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-light),
+    var(--accent),
+    transparent
+  );
+  width: 50%;
+  height: 3px;
+  position: absolute;
+  content: "";
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 2px 10px rgba(91, 133, 157, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-card.active .gradient {
+  opacity: 1;
+}
+
+.testimonials-content-area {
+  grid-column: span 12;
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+  min-height: 350px; 
+}
+
+@media screen and (min-width: 61.25rem) {
+  .testimonials-content-area {
+    grid-column: span 7;
+    margin-top: 0;
+  }
+}
+
+.testimonial-contentBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none; 
+  z-index: 0;
+}
+
+@media screen and (min-width: 61.25rem) {
+  .testimonial-contentBox {
+    align-items: center;
+  }
+}
+
+.testimonial-contentBox.active {
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.testimonial-contentBox .text h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  color: var(--primary);
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(10px);
+  margin-bottom: 0;
+}
+
+.testimonial-contentBox .text p {
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(10px);
+  margin-top: 1.25rem;
+  color: var(--text);
+}
+
+.testimonial-contentBox .text span {
+  display: flex;
+  gap: 0.2rem;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(10px);
+  margin-top: 0.5rem;
+}
+
+.testimonial-contentBox .text span svg {
+  width: 1.25rem;
+  color: #eca633; 
+}
+
+/* Tab Animations */
+.testimonial-contentBox.active .text h3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.testimonial-contentBox.active .text span {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.testimonial-contentBox.active .text p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+/* =========================================
+   15. MOBILE RESPONSIVENESS FIXES
    ========================================= */
 @media (max-width: 768px) {
   
-  /* --- A) Off-Canvas Right Side Menu --- */
-  .header-container {
-    display: flex;
-    justify-content: space-between; /* Logo on far left, hamburger on far right */
-    align-items: center;
-    width: 100%;
-    gap: 0;
+  /* 1. Stack and Center the Navigation */
+  header {
+    padding: 1rem;
   }
-
+  nav {
+    justify-content: center; 
+    gap: 0.8rem;
+  }
   .logo-link {
-    margin: 0; 
+    margin-right: 0; /* Removes the push to the left */
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
   }
-
   .header-logo {
-    height: 60px; 
+    height: 60px; /* Slightly smaller logo */
   }
-
-  .hamburger-btn {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 101; 
+  nav a {
+    font-size: 0.95rem; /* Shrink links to fit better */
   }
-
-  .hamburger-btn .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  /* The Slide-in Menu itself - Shifted to Right Side */
-  .main-nav {
-    position: fixed;
-    top: 0;
-    right: -320px; /* Hidden off-screen to the right */
-    left: auto;    /* Resets desktop constraints */
-    width: 300px;
-    height: 100vh;
-    background: var(--primary);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 5rem 2rem 2rem;
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
-    box-shadow: -2px 0 15px rgba(0,0,0,0.5);
-    overflow-y: auto;
-  }
-
-  .main-nav.active {
-    right: 0; /* Slides smoothly into viewport from the right */
-  }
-
-  .main-nav a {
-    font-size: 1.2rem;
+  .book-now {
+    margin-left: 0;
+    margin-top: 0.5rem;
     width: 100%;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .main-nav .book-now {
-    margin: 1.5rem 0 0 0;
     text-align: center;
-    border: none;
-    width: 100%;
   }
 
-  /* Close Button inside Menu */
-  .close-menu-btn {
-    display: block;
-    background: transparent;
-    border: none;
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 3rem;
-    color: var(--accent-light);
-    line-height: 1;
-    cursor: pointer;
-  }
-
-  /* The Background Overlay behind the menu */
-  .mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.6);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .mobile-nav-overlay.active {
-    opacity: 1;
-    visibility: visible;
-    display: block;
-  }
-
-
-  /* --- B) Spacing Fixes --- */
-
-  /* Scale Down Typography */
+  /* 2. Scale Down Giant Typography */
   .hero-content h1 {
-    font-size: 2.5rem; 
-    margin-top: 1rem;
+    font-size: 2.5rem; /* Scaled down from 4.5rem */
+    margin-top: 2rem;
   }
-  
+  .hero h2 {
+    font-size: 2.2rem; 
+  }
   .section-title {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
+  .highlight-phone {
+    font-size: 1.5rem;
+  }
 
-  /* Optimize Padding for Small Screens */
+  /* 3. Reduce Massive Box Padding */
   .page-section, 
   .bg-primary, 
   .bg-accent {
-    padding: 3rem 1.25rem; 
+    padding: 2.5rem 1rem; 
   }
-
   .photo-hero {
-    padding: 7rem 1.5rem 4rem; 
-    text-align: center; 
+    padding: 7rem 1rem 4rem; 
+    text-align: center; /* Center hero text on mobile */
   }
-
   .sleek-form-container {
-    padding: 2rem 1.25rem; 
+    padding: 2rem 1.25rem; /* 4rem padding is way too big on phones */
   }
-
-  /* Fix Layout Gaps */
-  .split-layout { 
-    grid-template-columns: 1fr; 
-    gap: 2rem; /* Reduced from 4rem */
+  
+  /* 4. Tweak Testimonials for Small Screens */
+  .testimonials-wrapper {
+    display: flex;
+    flex-direction: column;
   }
-
-  .split-text.text-center {
-    padding-right: 0 !important;
+  .testimonials-content-area {
+    min-height: 250px;
+    margin-top: 1rem;
+    text-align: center;
   }
-
-  .grid {
-    gap: 1.5rem;
-  }
-
-  /* Clean up the Banner Tags */
-  .tag-row-banner { 
-    gap: 0.5rem 1rem; 
-  }
-  .tag-row-banner span { 
-    font-size: 0.85rem; 
-  }
-
-  /* Packages fix */
-  .featured-package {
-    transform: scale(1); /* Drop the forced scaling on mobile so it fits nicely */
-  }
-  .featured-package:hover {
-    transform: translateY(-5px);
+  .testimonial-contentBox {
+    align-items: center;
   }
 }
