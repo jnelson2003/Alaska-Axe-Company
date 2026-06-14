@@ -73,8 +73,8 @@ nav {
 
 /* Strictly constrains the massive logo to a normal header size */
 .header-logo {
-  height: 60px; /* Locks the height (adjust up or down as needed) */
-  max-height: 60px; /* A second layer of protection against resizing */
+  height: 80px; /* Locks the height (adjust up or down as needed) */
+  max-height: 80px; /* A second layer of protection against resizing */
   width: auto; /* Keeps the logo's original proportions */
   display: block;
 }
