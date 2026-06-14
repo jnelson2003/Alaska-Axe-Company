@@ -1,7 +1,7 @@
 /* =========================================
    IMPORT GOOGLE FONTS
    ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@700&display=swap');
 
 /* =========================================
    1. VARIABLES (Your Color Palette)
@@ -57,6 +57,16 @@ footer {
   padding: 1.25rem 2rem; 
 }
 
+/* Added to allow photo to sit under the header */
+.transparent-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 100;
+}
+
 main {
   max-width: 960px;
   margin: 0 auto;
@@ -99,7 +109,14 @@ footer nav {
 /* =========================================
    5. LINKS & BUTTONS
    ========================================= */
-nav a,
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600; /* Made slightly bolder */
+  font-size: 1.15rem; /* Increased size for header text */
+  transition: color 0.2s ease-in-out; 
+}
+
 footer a {
   color: #fff;
   text-decoration: none;
@@ -124,6 +141,7 @@ footer a:hover {
   border-radius: 6px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+  font-size: 1rem !important; /* Keep button text normal size */
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -154,7 +172,7 @@ footer a:hover {
 
 .btn-large {
   padding: 1rem 2.5rem;
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 
 .btn-secondary.text-light-btn {
@@ -175,7 +193,7 @@ footer a:hover {
    6. PAGE SECTIONS & TYPOGRAPHY
    ========================================= */
 .page-section {
-  padding: 4rem 0;
+  padding: 3rem 0; /* Reduced spacing */
   border-bottom: 1px solid #dcd7ce;
 }
 
@@ -184,7 +202,7 @@ footer a:hover {
 }
 
 .pt-large {
-  padding-top: 8rem;
+  padding-top: 4rem; /* Reduced spacing */
 }
 
 .section-title {
@@ -200,24 +218,18 @@ footer a:hover {
 .lead-text { font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.8; }
 .relative-z { position: relative; z-index: 2; }
 
-/* Diagonal Backgrounds */
-.slanted-bg-primary, .slanted-bg-accent {
-  position: relative;
-  padding: 8rem 0;
-  z-index: 1;
-  border-bottom: none;
+/* Replaced Slanted Backgrounds with Flat Colors */
+.bg-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 4rem 0; /* Controlled padding for background sections */
 }
 
-.slanted-bg-primary::before, .slanted-bg-accent::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -1;
-  clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
+.bg-accent {
+  background: var(--accent);
+  color: #fff;
+  padding: 4rem 0;
 }
-
-.slanted-bg-primary::before { background: var(--primary); }
-.slanted-bg-accent::before { background: var(--accent); }
 
 /* =========================================
    7. HERO SECTIONS
@@ -278,14 +290,13 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Changed to left alignment */
+  align-items: flex-start; 
   color: #fff;
-  text-align: left; /* Changed to left alignment */
-  padding: 4rem 5% 6rem;
+  text-align: left; 
+  padding: 8rem 5% 6rem; /* Increased top padding to account for transparent header */
   border-radius: 0;
 }
 
-/* Updated Background targeting sample photo */
 .event-bg-hero {
   background-image: url('example-photo.jpg'); 
   background-size: cover; 
@@ -304,29 +315,36 @@ footer a:hover {
 }
 
 .hero-content h1 { font-size: 4.5rem; color: #fff; line-height: 1.1; margin-bottom: 1rem; }
-.hero-content .hero-text { margin-left: 0; } /* Forces left alignment of hero paragraph */
+.hero-content .hero-text { margin-left: 0; } 
 
-/* Marquee Animation */
-.marquee-container {
+/* New Static Banner Tags (Replaced Marquee) */
+.hero-tags-banner {
   position: absolute; bottom: 0; left: 0; width: 100%;
-  background: var(--accent); color: #fff;
-  padding: 1rem 0; overflow: hidden; z-index: 2;
-  border-top: 2px solid rgba(255,255,255,0.1);
+  background: rgba(25, 46, 59, 0.85); /* Semi-transparent primary */
+  padding: 1rem 0; z-index: 2;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-.marquee-content {
-  display: inline-block; white-space: nowrap; animation: marquee 20s linear infinite;
+.tag-row-banner {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
-.marquee-content span {
-  font-family: 'Oswald', sans-serif; font-size: 1.2rem; letter-spacing: 2px;
-  text-transform: uppercase; padding-right: 2rem;
+.tag-row-banner span {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } 
+@media (max-width: 768px) {
+  .tag-row-banner { gap: 1rem; }
+  .tag-row-banner span { font-size: 0.9rem; }
 }
+
 
 /* =========================================
    8. GRID, CARDS & SPLIT LAYOUTS
@@ -408,12 +426,12 @@ footer a:hover {
 .feature-list li::before,
 .sleek-bullet-list li::before,
 .axe-list li::before {
-  content: "🪓"; /* Updated to Axe emoji */
+  content: "🪓"; 
   position: absolute; 
   left: -5px; 
   top: 1px;
   color: var(--primary);
-  background: transparent; /* Overrides previous circular backgrounds */
+  background: transparent; 
   font-size: 1.1rem;
   width: auto;
   height: auto;
@@ -422,7 +440,7 @@ footer a:hover {
 .feature-list {
   max-width: 800px;
   margin: 0 auto;
-  list-style: none; /* Strip standard bullets */
+  list-style: none;
   padding-left: 0;
 }
 
@@ -440,7 +458,7 @@ footer a:hover {
 .axe-list { list-style: none; padding: 0; text-align: left; }
 .axe-list li { 
   position: relative; 
-  padding: 0.8rem 0 0.8rem 2rem; /* Give room for absolute axe */
+  padding: 0.8rem 0 0.8rem 2rem; 
   border-bottom: 1px solid #f0ece1; 
   font-weight: 500; 
 }
@@ -460,7 +478,7 @@ footer a:hover {
   font-weight: 500;
 }
 
-/* Photo Feature Grid (Replaced Emojis) */
+/* Photo Feature Grid */
 .features-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 3rem; }
 
 .feature-photo-box {
@@ -549,7 +567,7 @@ footer a:hover {
 }
 
 .conversion-container {
-  max-width: 800px;
+  max-width: 1000px; /* Increased to allow split layout */
   margin: 0 auto;
 }
 
