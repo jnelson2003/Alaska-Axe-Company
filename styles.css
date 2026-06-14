@@ -114,7 +114,7 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
-}
+ }
 
 .logo-link {
   margin-right: auto;
@@ -590,16 +590,8 @@ footer a:hover {
 .feature-content p { font-size: 0.9rem; margin-bottom: 0; color: var(--accent-dark); line-height: 1.55; }
 
 /* =========================================
-   10. PACKAGE CARDS & BACKGROUND
+   10. PACKAGE CARDS
    ========================================= */
-.group-packages-section {
-  background-image: url('background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 5rem 0; /* Add padding to properly show the background */
-}
-
 .package-grid {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: stretch;
@@ -615,165 +607,4 @@ footer a:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  position: relative;
-}
-
-.package-photo-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.package-photo-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-}
-
-.package-content {
-  padding: 2rem 1.75rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.package-content h3 { color: var(--primary); font-size: 1.75rem; margin-bottom: 0.4rem; }
-.package-desc { color: var(--accent-dark); font-style: italic; min-height: 44px; margin-bottom: 0; }
-.package-content hr { border: none; border-top: 2px solid var(--bg); margin: 1.25rem 0; }
-
-.package-price {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  color: var(--accent);
-  letter-spacing: 1px;
-  margin-bottom: 0.75rem;
-}
-
-.package-cta {
-  margin-top: auto;
-  padding-top: 1.5rem;
-}
-
-/* Featured Package */
-.featured-package {
-  background: var(--bg);
-  color: var(--primary);
-  border: none;
-  box-shadow: 0 24px 48px rgba(0,0,0,0.35);
-  transform: scale(1.04);
-  z-index: 2;
-}
-
-.featured-package:hover { transform: scale(1.04) translateY(-6px); }
-.featured-package .package-content h3 { color: var(--primary); }
-.featured-package .package-desc { color: var(--accent-dark); }
-.featured-package hr { border-top-color: #dcd7ce; }
-.featured-package .axe-list li { border-bottom-color: #dcd7ce; color: var(--primary); }
-.featured-package .axe-list li::before { color: var(--accent); }
-.featured-package .package-price { color: var(--accent); }
-
-.popular-tag {
-  position: absolute;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--accent);
-  color: var(--white);
-  padding: 0.3rem 1.1rem;
-  border-radius: 20px;
-  font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  z-index: 3;
-  white-space: nowrap;
-}
-
-/* =========================================
-   11. CONVERSION / CTA BLOCK
-   ========================================= */
-.sleek-form-container {
-  border-top: 6px solid var(--accent);
-  padding: 4rem;
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-}
-
-.conversion-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.highlight-phone {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.highlight-phone:hover { color: var(--accent); }
-
-/* =========================================
-   12. EVENT TYPE PILLS (new)
-   ========================================= */
-.event-type-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.event-type-card {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  height: 300px;
-  cursor: default;
-}
-
-.event-type-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.event-type-card:hover img { transform: scale(1.06); }
-
-.event-type-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(25,46,59,0.92) 40%, rgba(25,46,59,0.2));
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.75rem;
-  color: var(--white);
-}
-
-.event-type-overlay h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.5rem;
-  color: var(--white);
-}
-
-.event-type-overlay p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.82);
-  line-height: 1.5;
-}
-
-/* =========================================
-   13. STATS STRIP (new)
-   ========================================= */
-.stats-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  background: var(--primary);
-}
-
-.stat-item {
-  padding: 2rem;
-  text-align: center;
-  color: var(--white);
-}
+  position: relative
