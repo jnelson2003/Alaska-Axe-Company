@@ -6,5 +6,5 @@ window.addEventListener('load', function() {
     // 5000ms delay to see the spin effect
     setTimeout(function() {
         loader.classList.add('loader-hidden');
-    }, 5000); 
+    }, 10000); 
 });
