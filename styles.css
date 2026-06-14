@@ -878,3 +878,80 @@ footer a:hover {
   transform: translateY(0);
   transition-delay: 0.3s;
 }
+
+/* =========================================
+   15. MOBILE RESPONSIVENESS FIXES
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* 1. Stack and Center the Navigation */
+  header {
+    padding: 1rem;
+  }
+  nav {
+    justify-content: center; 
+    gap: 0.8rem;
+  }
+  .logo-link {
+    margin-right: 0; /* Removes the push to the left */
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  .header-logo {
+    height: 60px; /* Slightly smaller logo */
+  }
+  nav a {
+    font-size: 0.95rem; /* Shrink links to fit better */
+  }
+  .book-now {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 2. Scale Down Giant Typography */
+  .hero-content h1 {
+    font-size: 2.5rem; /* Scaled down from 4.5rem */
+    margin-top: 2rem;
+  }
+  .hero h2 {
+    font-size: 2.2rem; 
+  }
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .highlight-phone {
+    font-size: 1.5rem;
+  }
+
+  /* 3. Reduce Massive Box Padding */
+  .page-section, 
+  .bg-primary, 
+  .bg-accent {
+    padding: 2.5rem 1rem; 
+  }
+  .photo-hero {
+    padding: 7rem 1rem 4rem; 
+    text-align: center; /* Center hero text on mobile */
+  }
+  .sleek-form-container {
+    padding: 2rem 1.25rem; /* 4rem padding is way too big on phones */
+  }
+  
+  /* 4. Tweak Testimonials for Small Screens */
+  .testimonials-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .testimonials-content-area {
+    min-height: 250px;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .testimonial-contentBox {
+    align-items: center;
+  }
+}
