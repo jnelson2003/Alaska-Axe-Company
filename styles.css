@@ -1,3 +1,6 @@
+/* =========================================
+   1. VARIABLES (Your Color Palette)
+   ========================================= */
 :root {
   --primary: #1f2937;
   --accent: #b45309;
@@ -6,54 +9,88 @@
   --text: #111827;
 }
 
+/* =========================================
+   2. GLOBAL RESET & BASE
+   ========================================= */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  /* UPGRADE: Modern system font stack looks cleaner than basic Arial */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--text);
   background: var(--bg);
+  line-height: 1.6; /* UPGRADE: Makes paragraphs easier to read */
 }
 
+/* =========================================
+   3. LAYOUT (Header, Main, Footer)
+   ========================================= */
 header,
 footer {
   background: var(--primary);
   color: #fff;
-  padding: 1rem;
+  padding: 1.25rem 2rem; /* UPGRADE: Slightly more breathing room */
 }
 
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem; /* UPGRADE: Taller padding for visual balance */
+}
+
+/* =========================================
+   4. NAVIGATION
+   ========================================= */
 nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.25rem; /* UPGRADE: Slightly wider spacing between links */
 }
 
+footer nav {
+  gap: 1.5rem;
+  justify-content: center; /* UPGRADE: Centers the footer links */
+}
+
+/* =========================================
+   5. LINKS & BUTTONS
+   ========================================= */
 nav a,
 footer a {
   color: #fff;
   text-decoration: none;
+  font-weight: 500;
+  /* UPGRADE: Smooth transition for hover effects */
+  transition: color 0.2s ease-in-out; 
 }
 
 nav a:hover,
 footer a:hover {
-  text-decoration: underline;
+  text-decoration: none; /* Replaced underline with a color shift */
+  color: var(--accent);  
 }
 
+/* UPGRADE: The solid white outline was invisible on light backgrounds. 
+   Changed to the accent color so it works everywhere. */
 a:focus {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
+  outline: 2px dashed var(--accent);
+  outline-offset: 4px;
 }
 
 .book-now {
   margin-left: auto;
   background: var(--accent);
-  color: #fff;
+  color: #fff !important; /* Forces text to stay white on hover */
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px; /* Slightly rounder */
+  font-weight: bold;
+  /* UPGRADE: Smooth background change and tiny click animation */
+  transition: background-color 0.2s ease, transform 0.1s ease; 
 }
 
 .book-now:hover,
@@ -61,12 +98,7 @@ a:focus {
   background: var(--accent-dark);
 }
 
-main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-footer nav {
-  gap: 1rem;
+/* UPGRADE: Tiny "press down" effect when the button is actually clicked */
+.book-now:active {
+  transform: scale(0.96); 
 }
