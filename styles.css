@@ -464,7 +464,23 @@ footer a:hover {
    ========================================= */
 @media (max-width: 768px) {
   
-  /* --- A) Off-Canvas Left Side Menu --- */
+  /* --- A) Off-Canvas Right Side Menu --- */
+  .header-container {
+    display: flex;
+    justify-content: space-between; /* Logo on far left, hamburger on far right */
+    align-items: center;
+    width: 100%;
+    gap: 0;
+  }
+
+  .logo-link {
+    margin: 0; 
+  }
+
+  .header-logo {
+    height: 60px; 
+  }
+
   .hamburger-btn {
     display: flex;
     flex-direction: column;
@@ -484,38 +500,26 @@ footer a:hover {
     transition: all 0.3s ease;
   }
 
-  .header-container {
-    justify-content: flex-start;
-    gap: 1rem;
-  }
-
-  .logo-link {
-    margin: 0; 
-  }
-
-  .header-logo {
-    height: 60px; 
-  }
-
-  /* The Slide-in Menu itself */
+  /* The Slide-in Menu itself - Shifted to Right Side */
   .main-nav {
     position: fixed;
     top: 0;
-    left: -320px; 
+    right: -320px; /* Hidden off-screen to the right */
+    left: auto;    /* Resets desktop constraints */
     width: 300px;
     height: 100vh;
     background: var(--primary);
     flex-direction: column;
     align-items: flex-start;
     padding: 5rem 2rem 2rem;
-    transition: left 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out;
     z-index: 1000;
-    box-shadow: 2px 0 15px rgba(0,0,0,0.5);
+    box-shadow: -2px 0 15px rgba(0,0,0,0.5);
     overflow-y: auto;
   }
 
   .main-nav.active {
-    left: 0; 
+    right: 0; /* Slides smoothly into viewport from the right */
   }
 
   .main-nav a {
