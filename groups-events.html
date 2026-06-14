@@ -13,7 +13,8 @@
         <div class="axe-spinner">🪓</div>
     </div>
     
-    <header>
+    <!-- Added transparent-header class here -->
+    <header class="transparent-header">
       <nav aria-label="Main Navigation">
         <a href="index.html" class="logo-link" aria-label="Alaska Axe Company Home">
           <img src="logo.png" alt="Alaska Axe Company Logo" class="header-logo" />
@@ -31,22 +32,28 @@
 
     <main class="no-padding-main">
       
-  <section class="hero photo-hero event-bg-hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Unforgettable Events Start Here</h1>
-      <p class="hero-text">Whether you're celebrating a birthday, bringing your team together, or planning a special gathering, axe throwing is an ultimate fun and exciting experience for everyone.</p>
-      <a href="#packages" class="btn btn-primary mt-2">Check Availability & Packages</a>
-    </div>
-    <div class="marquee-container">
-      <div class="marquee-content">
-        <span>Birthday Parties • Corporate Events • Team Building • Special Occasions • Group Packages • Event Inquiry •</span>
-        <span>Birthday Parties • Corporate Events • Team Building • Special Occasions • Group Packages • Event Inquiry •</span>
-      </div>
-    </div>
-  </section>
+      <!-- Hero Section -->
+      <section class="hero photo-hero event-bg-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1>Unforgettable Events Start Here</h1>
+          <p class="hero-text">Whether you're celebrating a birthday, bringing your team together, or planning a special gathering, axe throwing is an ultimate fun and exciting experience for everyone.</p>
+          <a href="#packages" class="btn btn-primary mt-2">Check Availability & Packages</a>
+        </div>
+        
+        <!-- Replaced Marquee with Static Tag Banner -->
+        <div class="hero-tags-banner">
+          <div class="container tag-row-banner">
+            <span>Birthday Parties</span>
+            <span>Corporate Events</span>
+            <span>Team Building</span>
+            <span>Special Occasions</span>
+          </div>
+        </div>
+      </section>
 
-      <section class="page-section slanted-bg-primary" style="margin-top: -4vw;">
+      <!-- Removed slanted-bg, applied standard bg-primary -->
+      <section class="page-section bg-primary">
         <div class="container relative-z">
           <h2 class="section-title text-light">Choose Your Event Type</h2>
           <div class="grid photo-grid">
@@ -115,7 +122,8 @@
         </div>
       </section>
 
-      <section class="page-section slanted-bg-accent photo-split">
+      <!-- Removed slanted-bg, applied standard bg-accent -->
+      <section class="page-section bg-accent photo-split">
         <div class="container relative-z split-layout">
           <div class="split-text text-light">
             <h2>We Bring the Axes to You</h2>
@@ -186,21 +194,28 @@
           </div>
 
         </div>
-        <div class="text-center mt-2" style="margin-top: 3rem;">
-          <a href="https://www.apple.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Inquire to Book</a>
-        </div>
+        <!-- Removed "Inquire to book" button -->
       </section>
 
-      <section id="book-now" class="page-section container pt-large">
-        <div class="conversion-container sleek-form-container text-center">
-          <h2 class="section-title" style="margin-bottom: 0.5rem;">Ready to Throw?</h2>
-          <p class="lead-text" style="margin-bottom: 2rem;">Tell us a little about your event and we'll help you hit the mark. Secure your date and let us handle the rest so you can focus on the fun.</p>
+      <section id="book-now" class="page-section container pt-large" style="margin-bottom: 4rem;">
+        <div class="conversion-container sleek-form-container split-layout" style="align-items: center;">
           
-          <a href="https://www.apple.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" style="margin-bottom: 2rem;">Book Your Event Now</a>
+          <div class="split-text text-center" style="padding-right: 1rem;">
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Ready to Throw?</h2>
+            <p class="lead-text" style="margin-bottom: 2rem;">Tell us a little about your event and we'll help you hit the mark. Secure your date and let us handle the rest so you can focus on the fun.</p>
+            
+            <a href="https://www.apple.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" style="margin-bottom: 2rem;">Book Your Event Now</a>
+            
+            <p class="secondary-text">Or call us today to reserve your date: <br>
+              <a href="tel:+19073282288" class="highlight-phone">(907) 328-2288</a>
+            </p>
+          </div>
           
-          <p class="secondary-text">Or call us today to reserve your date: <br>
-            <a href="tel:+19073282288" class="highlight-phone">(907) 328-2288</a>
-          </p>
+          <!-- Added Image to Ready to Throw Section -->
+          <div class="split-image" style="height: 100%;">
+            <img src="example-photo.jpg" alt="Axe Throwing Experience" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+          </div>
+
         </div>
       </section>
 
