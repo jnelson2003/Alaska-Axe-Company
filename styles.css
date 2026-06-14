@@ -98,7 +98,7 @@ footer a {
 nav a:hover,
 footer a:hover {
   text-decoration: none; 
-  color: var(--accent); /* Syntax error fixed here */
+  color: var(--accent);
 }
 
 .book-now {
@@ -389,6 +389,10 @@ footer a:hover {
   margin-bottom: 3rem;
 }
 
+.footer-column {
+  text-align: center;
+}
+
 .footer-heading {
   font-family: 'Oswald', sans-serif;
   font-size: 1.2rem;
@@ -402,7 +406,7 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  align-items: flex-start; 
+  align-items: center; 
 }
 
 .footer-column a {
@@ -447,8 +451,4 @@ footer a:hover {
   text-align: center;
   font-size: 0.85rem;
   color: #aaa;
-}
-
-.footer-column {
-  text-align: center;
 }
