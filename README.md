@@ -32,10 +32,11 @@ The navigation is strategically structured to prioritize user intent, placing th
 
 ---
 ## Inspiration 
-**https://ismashusa.com/**
-**https://badaxethrowing.com/**
-**https://doubleedgeaxes.com/**
+* https://ismashusa.com/
+* https://badaxethrowing.com/
+* https://doubleedgeaxes.com/
 
+---
 
 ## 👤 User Experience (UX) Blueprint
 
