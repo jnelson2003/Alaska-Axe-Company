@@ -322,7 +322,7 @@ footer a:hover {
   position: absolute; bottom: 0; left: 0; width: 100%;
   background: var(--accent-light); /* Changed to your light blue variable */
   padding: 1rem 0; z-index: 2;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid #5B859D;
 }
 
 .tag-row-banner {
