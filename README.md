@@ -1,8 +1,4 @@
-# 🪓 Alaska Axe Throwing Co. — Website Development Roadmap
-
-Welcome to the repository for the **Alaska Axe Throwing Co.** website. This project is a high-conversion, visually striking web platform designed for an entertainment and axe-throwing venue. The site focuses on seamless UX, fast booking funnels, and localized SEO.
-
----
+# 🪓 Alaska Axe Throwing Co. Website Development Roadmap
 
 ## 🗺️ Site Architecture & Navigation
 
@@ -38,7 +34,7 @@ The navigation is strategically structured to prioritize user intent, placing th
 
 ## 👤 User Experience (UX) Blueprint
 
-Our design decisions are heavily driven by the principles found in **Laws of UX** (e.g., Hick's Law, Serial Position Effect, Jakob's Law).
+Design decisions are heavily driven by the principles found in **Laws of UX** (e.g., Hick's Law, Serial Position Effect, Jakob's Law).
 
 ### 🎯 Core User Intent
 Most visitors are trying to do exactly one of three things:
