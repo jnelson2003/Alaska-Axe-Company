@@ -101,6 +101,10 @@ footer a:hover {
   color: var(--accent); /* Syntax error fixed here */
 }
 
+.book-now {
+  margin-left: 1.5rem; /* Increases the space to the left of the book-now button */
+}
+
 /* =========================================
    6. PAGE SECTIONS & TYPOGRAPHY
    ========================================= */
