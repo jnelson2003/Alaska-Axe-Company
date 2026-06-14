@@ -1,12 +1,18 @@
 /* =========================================
+   IMPORT GOOGLE FONTS
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@700&display=swap');
+
+/* =========================================
    1. VARIABLES (Your Color Palette)
    ========================================= */
 :root {
-  --primary: #1f2937;
-  --accent: #b45309;
-  --accent-dark: #92400e;
-  --bg: #f9fafb;
-  --text: #111827;
+  --primary: #192E3B;     /* Deep Navy/Grey - for header, footer, headings */
+  --accent: #5B859D;      /* Medium Blue - for buttons and links */
+  --accent-dark: #4D5C64; /* Dark Slate - for button hover states */
+  --bg: #ECE7DD;          /* Warm Cream/Beige - for the main background */
+  --text: #192E3B;        /* Deep Navy/Grey - mapped primary to text for high contrast */
+  --accent-light: #83A0AC; /* Light Blue/Grey - extra color from your palette available if needed */
 }
 
 /* =========================================
@@ -18,11 +24,18 @@
 
 body {
   margin: 0;
-  /* UPGRADE: Modern system font stack looks cleaner than basic Arial */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Montserrat', sans-serif; /* UPGRADE: Clean, modern body font */
   color: var(--text);
   background: var(--bg);
-  line-height: 1.6; /* UPGRADE: Makes paragraphs easier to read */
+  line-height: 1.6; 
+}
+
+/* Apply Oswald strictly to headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase; /* Oswald looks exceptionally good in all-caps */
+  margin-top: 0;
 }
 
 /* =========================================
@@ -32,13 +45,13 @@ header,
 footer {
   background: var(--primary);
   color: #fff;
-  padding: 1.25rem 2rem; /* UPGRADE: Slightly more breathing room */
+  padding: 1.25rem 2rem; 
 }
 
 main {
   max-width: 960px;
   margin: 0 auto;
-  padding: 3rem 1.5rem; /* UPGRADE: Taller padding for visual balance */
+  padding: 3rem 1.5rem; 
 }
 
 /* =========================================
@@ -48,12 +61,12 @@ nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.25rem; /* UPGRADE: Slightly wider spacing between links */
+  gap: 1.25rem; 
 }
 
 footer nav {
   gap: 1.5rem;
-  justify-content: center; /* UPGRADE: Centers the footer links */
+  justify-content: center; 
 }
 
 /* =========================================
@@ -64,76 +77,10 @@ footer a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  /* UPGRADE: Smooth transition for hover effects */
   transition: color 0.2s ease-in-out; 
 }
 
 nav a:hover,
 footer a:hover {
-  text-decoration: none; /* Replaced underline with a color shift */
-  color: var(--accent);  
-}
-
-/* UPGRADE: The solid white outline was invisible on light backgrounds. 
-   Changed to the accent color so it works everywhere. */
-a:focus {
-  outline: 2px dashed var(--accent);
-  outline-offset: 4px;
-}
-
-.book-now {
-  margin-left: auto;
-  background: var(--accent);
-  color: #fff !important; /* Forces text to stay white on hover */
-  text-decoration: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px; /* Slightly rounder */
-  font-weight: bold;
-  /* UPGRADE: Smooth background change and tiny click animation */
-  transition: background-color 0.2s ease, transform 0.1s ease; 
-}
-
-.book-now:hover,
-.book-now:focus {
-  background: var(--accent-dark);
-}
-
-/* UPGRADE: Tiny "press down" effect when the button is actually clicked */
-.book-now:active {
-  transform: scale(0.96); 
-}
-
-/* =========================================
-   6. LOADING SCREEN (Spinning Axe)
-   ========================================= */
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh; /* Covers the entire screen */
-  background: var(--bg); /* Uses your existing background color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Forces it to sit on top of everything else */
-  transition: opacity 0.4s ease, visibility 0.4s ease; /* Smooth fade out */
-}
-
-.axe-spinner {
-  font-size: 5rem; /* Makes the emoji nice and big */
-  animation: spin 1s linear infinite; /* 1 second spin, continuous loop */
-  transform-origin: center center; /* Ensures it spins perfectly on its axis */
-}
-
-/* The actual rotation math */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* We will use JavaScript to add this class when the page is ready */
-.loader-hidden {
-  opacity: 0;
-  visibility: hidden;
-}
+  text-decoration: none; 
+  color: var(--accent-
