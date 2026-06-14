@@ -37,7 +37,8 @@ footer a {
   text-decoration: none;
 }
 
-nav a:hover {
+nav a:hover,
+footer a:hover {
   text-decoration: underline;
 }
 
@@ -50,6 +51,7 @@ a:focus {
   margin-left: auto;
   background: var(--accent);
   color: #fff;
+  text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
 }
