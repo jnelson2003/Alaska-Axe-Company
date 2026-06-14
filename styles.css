@@ -448,3 +448,7 @@ footer a:hover {
   font-size: 0.85rem;
   color: #aaa;
 }
+
+.footer-column {
+  text-align: center;
+}
