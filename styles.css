@@ -7,12 +7,12 @@
    1. VARIABLES (Your Color Palette)
    ========================================= */
 :root {
-  --primary: #192E3B;     /* Deep Navy/Grey - for header, footer, headings */
-  --accent: #5B859D;      /* Medium Blue - for buttons and links */
-  --accent-dark: #4D5C64; /* Dark Slate - for button hover states */
-  --bg: #ECE7DD;          /* Warm Cream/Beige - for the main background */
-  --text: #192E3B;        /* Deep Navy/Grey - mapped primary to text for high contrast */
-  --accent-light: #83A0AC; /* Light Blue/Grey - extra color from your palette available if needed */
+  --primary: #192E3B;     /* Deep Navy/Grey */
+  --accent: #5B859D;      /* Medium Blue */
+  --accent-dark: #4D5C64; /* Dark Slate */
+  --bg: #ECE7DD;          /* Warm Cream/Beige */
+  --text: #192E3B;        /* Deep Navy/Grey */
+  --accent-light: #83A0AC; /* Light Blue/Grey */
 }
 
 /* =========================================
@@ -22,20 +22,29 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth; /* Added for smooth anchor link scrolling */
+}
+
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif; /* UPGRADE: Clean, modern body font */
+  font-family: 'Montserrat', sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.6; 
 }
 
-/* Apply Oswald strictly to headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
-  text-transform: uppercase; /* Oswald looks exceptionally good in all-caps */
+  text-transform: uppercase;
   margin-top: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 /* =========================================
@@ -54,6 +63,12 @@ main {
   padding: 3rem 1.5rem; 
 }
 
+/* Added for edge-to-edge designs like the new hero/diagonals */
+.no-padding-main {
+  max-width: 100%;
+  padding: 0;
+}
+
 /* =========================================
    4. NAVIGATION
    ========================================= */
@@ -64,18 +79,16 @@ nav {
   gap: 1.25rem; 
 }
 
-/* Pushes the logo to the far left and the navigation links to the right */
 .logo-link {
   margin-right: auto; 
   display: flex;
   align-items: center;
 }
 
-/* Strictly constrains the massive logo to a normal header size */
 .header-logo {
-  height: 80px; /* Locks the height (adjust up or down as needed) */
-  max-height: 80px; /* A second layer of protection against resizing */
-  width: auto; /* Keeps the logo's original proportions */
+  height: 80px; 
+  max-height: 80px; 
+  width: auto; 
   display: block;
 }
 
@@ -96,13 +109,68 @@ footer a {
 }
 
 nav a:hover,
+nav a.active, /* Added active state */
 footer a:hover {
   text-decoration: none; 
   color: var(--accent);
 }
 
 .book-now {
-  margin-left: 1.5rem; /* Increases the space to the left of the book-now button */
+  margin-left: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff !important;
+}
+
+/* New Button Variations */
+.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+}
+
+.btn-secondary.text-light-btn {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-secondary.text-light-btn:hover {
+  background: #fff;
+  color: var(--accent) !important;
+}
+
+.full-width {
+  width: 100%;
 }
 
 /* =========================================
@@ -110,11 +178,15 @@ footer a:hover {
    ========================================= */
 .page-section {
   padding: 4rem 0;
-  border-bottom: 1px solid #dcd7ce; /* Subtle divider between sections */
+  border-bottom: 1px solid #dcd7ce;
 }
 
 .page-section:last-child {
   border-bottom: none;
+}
+
+.pt-large {
+  padding-top: 8rem;
 }
 
 .section-title {
@@ -126,11 +198,33 @@ footer a:hover {
 
 .text-center { text-align: center; }
 .mt-2 { margin-top: 1.5rem; }
+.text-light { color: #fff !important; }
 .lead-text { font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+.relative-z { position: relative; z-index: 2; }
+
+/* Diagonal Backgrounds */
+.slanted-bg-primary, .slanted-bg-accent {
+  position: relative;
+  padding: 8rem 0;
+  z-index: 1;
+  border-bottom: none;
+}
+
+.slanted-bg-primary::before, .slanted-bg-accent::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
+}
+
+.slanted-bg-primary::before { background: var(--primary); }
+.slanted-bg-accent::before { background: var(--accent); }
 
 /* =========================================
-   7. HERO SECTION
+   7. HERO SECTIONS
    ========================================= */
+/* Original Hero */
 .hero {
   background-color: var(--primary);
   color: #fff;
@@ -151,7 +245,7 @@ footer a:hover {
 .hero h2 {
   font-size: 3rem;
   color: #fff;
-  border-bottom: none; /* Removes the border from your global h2 rule */
+  border-bottom: none;
   padding-bottom: 0;
 }
 
@@ -179,49 +273,59 @@ footer a:hover {
   border: 1px solid rgba(255,255,255,0.2);
 }
 
+/* New Photo Hero */
+.photo-hero {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1598048145816-3a5c0b9db8d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1.5rem 6rem;
+  border-radius: 0;
+}
+
+.hero-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(25, 46, 59, 0.7), rgba(25, 46, 59, 0.95));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative; z-index: 2; max-width: 800px;
+}
+
+.hero-content h1 { font-size: 4.5rem; color: #fff; line-height: 1.1; margin-bottom: 1rem; }
+
+/* Marquee Animation */
+.marquee-container {
+  position: absolute; bottom: 0; left: 0; width: 100%;
+  background: var(--accent); color: #fff;
+  padding: 1rem 0; overflow: hidden; z-index: 2;
+  border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.marquee-content {
+  display: inline-block; white-space: nowrap; animation: marquee 20s linear infinite;
+}
+
+.marquee-content span {
+  font-family: 'Oswald', sans-serif; font-size: 1.2rem; letter-spacing: 2px;
+  text-transform: uppercase; padding-right: 2rem;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
 /* =========================================
-   8. BUTTONS
-   ========================================= */
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #fff !important;
-}
-
-.btn-primary:hover {
-  background: var(--accent-dark);
-  transform: translateY(-2px); /* Lifts the button slightly */
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-.btn-secondary:hover {
-  background: var(--primary);
-  color: #fff !important;
-}
-
-.full-width {
-  width: 100%;
-}
-
-/* =========================================
-   9. GRID & CARDS
+   8. GRID, CARDS & SPLIT LAYOUTS
    ========================================= */
 .grid {
   display: grid;
@@ -229,6 +333,7 @@ footer a:hover {
   gap: 2rem;
 }
 
+/* Original Card */
 .card {
   background: #fff;
   padding: 2rem;
@@ -256,8 +361,37 @@ footer a:hover {
   transform: scale(1.02);
 }
 
+/* New Sleek Photo Cards */
+.sleek-photo-card {
+  position: relative; height: 350px; overflow: hidden; border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.sleek-photo-card img {
+  width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;
+}
+
+.sleek-photo-card:hover img { transform: scale(1.1); }
+
+.card-overlay {
+  position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem 1.5rem;
+  background: linear-gradient(to top, rgba(25,46,59,0.95), transparent);
+  color: #fff; display: flex; align-items: flex-end;
+}
+
+.card-overlay h3 { margin: 0; font-size: 1.6rem; letter-spacing: 1px; color: #fff; }
+
+/* Split Layout */
+.split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.split-image img { width: 100%; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+
+@media (max-width: 768px) {
+  .split-layout { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 3rem; }
+}
+
 /* =========================================
-   10. LISTS & CALLOUTS
+   9. LISTS & CALLOUTS
    ========================================= */
 .highlight-section {
   background: #fff;
@@ -266,6 +400,7 @@ footer a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
+/* Original List */
 .feature-list {
   max-width: 800px;
   margin: 0 auto;
@@ -285,6 +420,16 @@ footer a:hover {
   font-weight: bold;
 }
 
+/* Sleek List */
+.sleek-bullet-list { list-style: none; padding: 0; margin-bottom: 2rem; }
+.sleek-bullet-list li {
+  position: relative; padding-left: 2rem; margin-bottom: 1rem; font-size: 1.1rem;
+}
+.sleek-bullet-list li::before {
+  content: "✓"; position: absolute; left: 0; color: #fff; font-weight: bold; background: var(--primary);
+  width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; top: 4px;
+}
+
 .inline-list {
   display: flex;
   flex-wrap: wrap;
@@ -292,6 +437,44 @@ footer a:hover {
   gap: 2rem;
   margin: 2rem 0;
   font-weight: 500;
+}
+
+/* Icon Feature Grid */
+.features-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 3rem; }
+.feature-box { text-align: center; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.feature-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+.feature-box h4 { color: var(--primary); font-size: 1.2rem; }
+.feature-box p { font-size: 0.95rem; margin-bottom: 0; }
+
+/* =========================================
+   10. EVENT PACKAGES
+   ========================================= */
+.package-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; }
+.package-card {
+  background: #fff; border: 1px solid #dcd7ce; border-radius: 8px; padding: 3rem 2rem; text-align: center;
+  transition: transform 0.3s ease;
+}
+.package-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.package-card h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 0.5rem; }
+.package-desc { color: var(--accent-dark); font-style: italic; min-height: 48px; }
+.package-card hr { border: none; border-top: 2px solid var(--bg); margin: 1.5rem 0; }
+.package-card ul { list-style: none; padding: 0; text-align: left; }
+.package-card ul li { padding: 0.8rem 0; border-bottom: 1px solid #f0ece1; font-weight: 500; }
+.package-card ul li:last-child { border-bottom: none; }
+
+.featured-package {
+  background: var(--primary); color: #fff; border: none; transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(25, 46, 59, 0.2); position: relative;
+}
+.featured-package:hover { transform: scale(1.05) translateY(-10px); }
+.featured-package h3 { color: #fff; }
+.featured-package .package-desc { color: var(--accent-light); }
+.featured-package hr { border-top-color: var(--accent-dark); }
+.featured-package ul li { border-bottom-color: var(--accent-dark); }
+.popular-tag {
+  position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+  background: var(--accent); color: #fff; padding: 0.3rem 1rem; border-radius: 20px;
+  font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;
 }
 
 /* =========================================
@@ -306,6 +489,11 @@ footer a:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
+.sleek-form-container {
+  border-top: 6px solid var(--accent);
+  padding: 4rem;
+}
+
 .custom-form .form-group {
   margin-bottom: 1.5rem;
 }
@@ -316,67 +504,73 @@ footer a:hover {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   color: var(--primary);
+  text-transform: uppercase; 
+  font-family: 'Oswald', sans-serif; 
+  letter-spacing: 1px;
 }
 
 .custom-form input {
   width: 100%;
-  padding: 0.8rem;
+  padding: 1rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 4px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-  background: #fdfdfd;
-  transition: border-color 0.2s ease;
+  background: var(--bg);
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
 }
 
 .custom-form input:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(91, 133, 157, 0.2);
+  border-color: #ccc;
+  border-left-color: var(--accent); 
+  box-shadow: 0 0 15px rgba(91, 133, 157, 0.1);
 }
 
+.highlight-phone { font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--primary); text-decoration: none; }
+.highlight-phone:hover { color: var(--accent); }
+
 /* =========================================
-   12. LOADING SCREEN (Spinning Axe)
+   12. LOADING SCREEN
    ========================================= */
 #loader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Covers the entire screen */
-  background: var(--bg); /* Uses your existing background color */
+  height: 100vh; 
+  background: var(--bg); 
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Forces it to sit on top of everything else */
-  transition: opacity 0.4s ease, visibility 0.4s ease; /* Smooth fade out */
+  z-index: 9999; 
+  transition: opacity 0.4s ease, visibility 0.4s ease; 
 }
 
 .axe-spinner {
-  font-size: 5rem; /* Makes the emoji nice and big */
-  animation: spin 1s linear infinite; /* 1 second spin, continuous loop */
-  transform-origin: center center; /* Ensures it spins perfectly on its axis */
+  font-size: 5rem; 
+  animation: spin 1s linear infinite; 
+  transform-origin: center center; 
 }
 
-/* The actual rotation math */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* We will use JavaScript to add this class when the page is ready */
 .loader-hidden {
   opacity: 0;
   visibility: hidden;
 }
 
 /* =========================================
-   13. ENHANCED MULTI-COLUMN FOOTER
+   13. FOOTER
    ========================================= */
 .site-footer {
   background: var(--primary);
   color: #fff;
-  padding: 4rem 2rem 1rem; /* Adds generous padding to the top */
+  padding: 4rem 2rem 1rem; 
   font-size: 0.95rem;
 }
 
@@ -389,7 +583,6 @@ footer a:hover {
   margin-bottom: 3rem;
 }
 
-/* Forces the column itself to center all of its contents */
 .footer-column {
   display: flex;
   flex-direction: column;
@@ -400,250 +593,10 @@ footer a:hover {
 .footer-heading {
   font-family: 'Oswald', sans-serif;
   font-size: 1.2rem;
-  color: var(--accent); /* Adds a nice pop of color to the headers */
+  color: var(--accent); 
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 
-/* Overrides the global nav to perfectly center the stacked links */
 .footer-column nav {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  align-items: center; 
-  width: 100%;
-}
-
-.footer-column a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-column a:hover {
-  color: var(--accent);
-}
-
-/* Specific styling for the address and phone */
-.footer-address {
-  font-style: normal; /* Removes default italics from <address> tags */
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-.footer-address p {
-  margin: 0;
-  color: #ccc;
-}
-
-.footer-phone a {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--accent-light);
-}
-
-.footer-social {
-  margin-top: 1.5rem;
-  font-weight: bold;
-}
-
-/* The divider line and copyright text at the very bottom */
-.footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separating line */
-  text-align: center;
-  font-size: 0.85rem;
-  color: #aaa;
-}
-
-/* =========================================
-   14. TESTIMONIALS SECTION (Custom Integration)
-   ========================================= */
-
-.testimonials-wrapper {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  width: 100%;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 61.25rem) {
-  .testimonials-wrapper {
-    column-gap: 3rem;
-  }
-}
-
-.testimonials-cards {
-  grid-column: span 12;
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media screen and (min-width: 61.25rem) {
-  .testimonials-cards {
-    grid-column: span 5;
-  }
-}
-
-.testimonial-card {
-  cursor: pointer;
-  padding: 1.5rem;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 1.5rem;
-  align-items: center;
-  transition: 0.3s;
-  position: relative;
-  border: 2px solid transparent;
-}
-
-.testimonial-card img {
-  display: block;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  filter: grayscale(1);
-  transition: 0.5s;
-}
-
-.testimonial-card h3 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  color: var(--primary);
-  margin-bottom: 0;
-  text-transform: uppercase;
-}
-
-.testimonial-card p {
-  text-transform: capitalize;
-  color: var(--accent-dark);
-  font-size: 0.9rem;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.testimonial-card.active {
-  background: #fff;
-  border: 2px solid rgba(25, 46, 59, 0.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.testimonial-card.active img {
-  filter: grayscale(0);
-}
-
-/* Styled to match your Alaska Axe branding colors */
-.testimonial-card .gradient {
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    var(--accent-light),
-    var(--accent),
-    transparent
-  );
-  width: 50%;
-  height: 3px;
-  position: absolute;
-  content: "";
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0px 2px 10px rgba(91, 133, 157, 0.4);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.testimonial-card.active .gradient {
-  opacity: 1;
-}
-
-.testimonials-content-area {
-  grid-column: span 12;
-  position: relative;
-  width: 100%;
-  margin-top: 2rem;
-  min-height: 350px; /* Prevents layout shifting when clicking tabs */
-}
-
-@media screen and (min-width: 61.25rem) {
-  .testimonials-content-area {
-    grid-column: span 7;
-    margin-top: 0;
-  }
-}
-
-.testimonial-contentBox {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  pointer-events: none; /* Prevents invisible boxes from blocking clicks */
-  z-index: 0;
-}
-
-@media screen and (min-width: 61.25rem) {
-  .testimonial-contentBox {
-    align-items: center;
-  }
-}
-
-.testimonial-contentBox.active {
-  pointer-events: auto;
-  z-index: 1;
-}
-
-.testimonial-contentBox .text h3 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  color: var(--primary);
-  transition: 0.5s;
-  opacity: 0;
-  transform: translateY(10px);
-  margin-bottom: 0;
-}
-
-.testimonial-contentBox .text p {
-  transition: 0.5s;
-  opacity: 0;
-  transform: translateY(10px);
-  margin-top: 1.25rem;
-  color: var(--text);
-}
-
-.testimonial-contentBox .text span {
-  display: flex;
-  gap: 0.2rem;
-  transition: 0.5s;
-  opacity: 0;
-  transform: translateY(10px);
-  margin-top: 0.5rem;
-}
-
-.testimonial-contentBox .text span svg {
-  width: 1.25rem;
-  color: #eca633; /* Kept standard gold color for stars */
-}
-
-/* Tab Animations */
-.testimonial-contentBox.active .text h3 {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.1s;
-}
-
-.testimonial-contentBox.active .text span {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.2s;
-}
-
-.testimonial-contentBox.active .text p {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.3s;
-}
