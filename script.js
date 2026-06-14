@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
         // 300ms delay to see the spin effect
         setTimeout(function() {
             loader.classList.add('loader-hidden');
-        }, 300); 
+        }, 3000); 
     }
 });
 
