@@ -9,13 +9,7 @@
   </head>
   <body>
 
-        <div id="loader">
-      <div class="axe-spinner">
-        <img src="Axe Asset.png" alt="Loading Axe..." style="width: 80px; height: auto; display: block;" />
-      </div>
-    </div>
-
-        <header class="transparent-header">
+    <header class="transparent-header">
       <nav aria-label="Main Navigation">
         <a href="index.html" class="logo-link" aria-label="Alaska Axe Company Home">
           <img src="logo.png" alt="Alaska Axe Company Logo" class="header-logo" />
@@ -27,95 +21,81 @@
         <a href="gift-cards.html">Gift Cards</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a class="btn btn-primary book-now" href="https://www.apple.com" target="_blank" rel="noopener noreferrer">Book Now</a>
+        <a class="btn btn-primary book-now" href="#book-now">Book Now</a>
       </nav>
     </header>
 
-    <main class="no-padding-main">
-
-            <section class="hero photo-hero event-bg-hero">
+    <main>
+      <section class="hero full-bleed-hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
+        <div class="hero-content container">
           <h1>Unforgettable Events Start Here</h1>
           <p class="hero-text">From birthdays and bachelor parties to team outings and company milestones, axe throwing brings people together for a high-energy experience they'll talk about for years.</p>
-          <div class="hero-cta-group">
-            <a href="#book-now" class="btn btn-secondary text-light-btn btn-large">Book Now</a>
-          </div>
+          <a href="#book-now" class="btn btn-secondary text-light-btn btn-large">Book Now</a>
         </div>
       </section>
 
-            <section class="page-section container">
+      <section class="page-section container">
         <h2 class="section-title">Everything's Taken Care Of</h2>
         <p class="section-subtitle">Every event package includes the essentials.</p>
-        <div class="grid features-grid">
-
-          <div class="feature-photo-box">
+        <div class="grid">
+          <div class="feature-card">
             <img src="example-photo.jpg" alt="Private Event Space">
             <div class="feature-content">
               <h4>Private Event Space</h4>
               <p>Full or partial venue rentals based on group size. Your guests get the space they need.</p>
             </div>
           </div>
-
-          <div class="feature-photo-box">
+          <div class="feature-card">
             <img src="example-photo.jpg" alt="Certified Coaches">
             <div class="feature-content">
               <h4>Certified Coaches</h4>
               <p>Dedicated coaches run games, teach technique, and keep the energy high all event long.</p>
             </div>
           </div>
-
-          <div class="feature-photo-box">
+          <div class="feature-card">
             <img src="example-photo.jpg" alt="Music and AV Setup">
             <div class="feature-content">
               <h4>Music &amp; AV Setup</h4>
               <p>Bluetooth speakers, mic access, and presentation setups ready for your event.</p>
             </div>
           </div>
-
-          <div class="feature-photo-box">
+          <div class="feature-card">
             <img src="example-photo.jpg" alt="Hassle-Free Booking">
             <div class="feature-content">
               <h4>Stress-Free Setup</h4>
               <p>BYO food &amp; drinks are welcome. Setup and cleanup is fully handled by our team.</p>
             </div>
           </div>
-
         </div>
       </section>
 
-            <section id="packages" class="page-section bg-primary">
-        <div class="container relative-z">
+      <section id="packages" class="page-section bg-primary text-center">
+        <div class="container">
           <h2 class="section-title text-light">Group Packages</h2>
-          <p class="section-subtitle" style="color: rgba(255,255,255,0.7); margin-bottom: 3rem;">All packages include a dedicated coach, safety gear, and a whole lot of fun.</p>
-
+          <p class="section-subtitle text-light">All packages include a dedicated coach, safety gear, and a whole lot of fun.</p>
+          
           <div class="grid package-grid">
-
-            <div class="package-photo-card">
+            <div class="package-card">
               <img src="example-photo.jpg" alt="Standard Group Package">
               <div class="package-content">
                 <h3>Standard Group</h3>
-                <p class="package-desc">Perfect for small celebrations and nights out.</p>
                 <p class="package-price">Up to 12 Guests</p>
                 <hr>
                 <ul class="axe-list">
                   <li>2 Hours of Axe Throwing</li>
                   <li>1 Dedicated Coach</li>
                   <li>Shared Venue Space</li>
-                  <li>Safety Gear Provided</li>
                 </ul>
-                <div class="package-cta">
-                  <a href="#book-now" class="btn btn-secondary full-width">Get a Quote</a>
-                </div>
+                <a href="#book-now" class="btn btn-secondary full-width mt-2">Get a Quote</a>
               </div>
             </div>
 
-            <div class="package-photo-card featured-package">
+            <div class="package-card featured">
               <div class="popular-tag">Most Popular</div>
               <img src="example-photo.jpg" alt="Premium Event Package">
               <div class="package-content">
                 <h3>Premium Event</h3>
-                <p class="package-desc">Ideal for corporate teams and mid-sized parties.</p>
                 <p class="package-price">13 – 30 Guests</p>
                 <hr>
                 <ul class="axe-list">
@@ -123,284 +103,77 @@
                   <li>2 Dedicated Coaches</li>
                   <li>Private Throwing Lanes</li>
                   <li>Custom Tournament Play</li>
-                  <li>Music &amp; AV Setup</li>
                 </ul>
-                <div class="package-cta">
-                  <a href="#book-now" class="btn btn-primary full-width">Book This Package</a>
-                </div>
+                <a href="#book-now" class="btn btn-primary full-width mt-2">Book This Package</a>
               </div>
             </div>
 
-            <div class="package-photo-card">
+            <div class="package-card">
               <img src="example-photo.jpg" alt="Private Buyout Package">
               <div class="package-content">
                 <h3>Private Buyout</h3>
-                <p class="package-desc">Complete exclusivity for large-scale events.</p>
                 <p class="package-price">30+ Guests</p>
                 <hr>
                 <ul class="axe-list">
                   <li>3+ Hours Full Access</li>
                   <li>Full Venue Exclusivity</li>
                   <li>Full Staff Coverage</li>
-                  <li>AV &amp; Presentation Setup</li>
-                  <li>Custom Event Planning</li>
                 </ul>
-                <div class="package-cta">
-                  <a href="#book-now" class="btn btn-secondary full-width">Get a Quote</a>
-                </div>
+                <a href="#book-now" class="btn btn-secondary full-width mt-2">Get a Quote</a>
               </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-            <section class="page-section container">
-        <div class="split-layout">
-          <div class="split-image">
-            <img src="example-photo.jpg" alt="Mobile Axe Throwing Trailer">
-          </div>
-          <div class="split-text">
-            <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">We Bring the Axes to You</h2>
-            <p class="lead-text" style="margin: 0 0 1.5rem;">Planning a festival, outdoor bash, or company milestone? Our mobile axe-throwing trailer delivers a fully-managed experience straight to your location in Fairbanks and beyond.</p>
-            <ul class="sleek-bullet-list">
-              <li>Fully insured &amp; certified safe environment</li>
-              <li>Expert coaches included with every rental</li>
-              <li>Ideal for festivals, company picnics &amp; large outdoor events</li>
-              <li>Flexible scheduling and custom layouts</li>
-            </ul>
-            <a href="https://www.apple.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-2">Inquire About the Mobile Trailer</a>
-          </div>
-        </div>
-      </section>
-
-            <section class="page-section bg-primary">
-        <div class="container relative-z">
-          <h2 class="section-title text-light">What Groups Are Saying</h2>
-          <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Don't take our word for it. Hear from the people who've thrown with us.</p>
-
-          <div class="testimonials-wrapper">
-            <div class="testimonials-cards-column">
-
-              <div class="testimonial-card active" data-id="t1">
-                <div class="testimonial-avatar">JM</div>
-                <div class="testimonial-card-info">
-                  <strong>Jessica M.</strong>
-                  <span>Corporate Event</span>
-                </div>
-              </div>
-
-              <div class="testimonial-card" data-id="t2">
-                <div class="testimonial-avatar">BK</div>
-                <div class="testimonial-card-info">
-                  <strong>Brian K.</strong>
-                  <span>Birthday Party</span>
-                </div>
-              </div>
-
-              <div class="testimonial-card" data-id="t3">
-                <div class="testimonial-avatar">SR</div>
-                <div class="testimonial-card-info">
-                  <strong>Sarah R.</strong>
-                  <span>Bachelorette Party</span>
-                </div>
-              </div>
-
-              <div class="testimonial-card" data-id="t4">
-                <div class="testimonial-avatar">MT</div>
-                <div class="testimonial-card-info">
-                  <strong>Mike T.</strong>
-                  <span>Team Building</span>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="testimonials-content-area">
-
-              <div class="testimonial-contentBox active" id="t1">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">The whole team was nervous at first, but the coaches made everyone feel so comfortable. By the end, people who had never picked up an axe were landing bullseyes. Absolute game-changer for company culture.</p>
-                <div class="testimonial-author">Jessica M. — HR Director, Fairbanks</div>
-              </div>
-
-              <div class="testimonial-contentBox" id="t2">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">Best birthday I've ever had. We booked the Premium Event and they ran a whole tournament for us. The staff was incredible and our group of 20 couldn't stop talking about it for weeks.</p>
-                <div class="testimonial-author">Brian K. — Birthday Guest, Anchorage</div>
-              </div>
-
-              <div class="testimonial-contentBox" id="t3">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">Forget the typical bachelorette brunch — this was insane. Everyone had a blast, the venue was amazing, and our bride walked away with a brand new skill. 10 out of 10, no notes.</p>
-                <div class="testimonial-author">Sarah R. — Maid of Honor, North Pole, AK</div>
-              </div>
-
-              <div class="testimonial-contentBox" id="t4">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">We've done escape rooms and paintball for team building and nothing has come close to this. The coaches ran mini-challenges between departments and it genuinely brought people together.</p>
-                <div class="testimonial-author">Mike T. — Operations Manager, Fairbanks</div>
-              </div>
-
             </div>
           </div>
         </div>
       </section>
 
-            <section class="page-section container">
+      <section class="page-section container">
+        <h2 class="section-title">What Groups Are Saying</h2>
+        <p class="section-subtitle">Hear from the people who've thrown with us.</p>
+        
+        <div class="grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"The whole team was nervous at first, but the coaches made everyone feel so comfortable. Absolute game-changer for company culture."</p>
+            <strong>- Jessica M.</strong>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Best birthday I've ever had. We booked the Premium Event and they ran a whole tournament for us. The staff was incredible."</p>
+            <strong>- Brian K.</strong>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Forget the typical bachelorette brunch — this was insane. Everyone had a blast, and our bride walked away with a brand new skill."</p>
+            <strong>- Sarah R.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section container">
         <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Everything you need to know before booking your event.</p>
-
         <div class="faq-list">
-
-          <div class="faq-item open">
-            <button class="faq-question" aria-expanded="true">
-              How far in advance should I book?
-              <span class="faq-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>We recommend booking at least 2 weeks in advance for groups under 20, and 3–4 weeks for larger events or private buyouts. Popular dates (Fridays, Saturdays, and holidays) fill up fast — especially in summer.</p>
-            </div>
-          </div>
-
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Is axe throwing safe for my group?
-              <span class="faq-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>Absolutely. Every session is led by a certified coach who teaches proper technique and enforces safety rules at all times. Our venue is designed for safety, and we have a perfect record because of it. You'll be throwing confidently within minutes.</p>
-            </div>
+            <button class="faq-question">How far in advance should I book?</button>
+            <div class="faq-answer"><p>We recommend booking at least 2 weeks in advance for groups under 20.</p></div>
           </div>
-
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Can we bring food and drinks?
-              <span class="faq-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>Yes! You're welcome to bring in food, non-alcoholic beverages, and birthday cakes. We ask that alcohol is consumed responsibly and never while actively throwing. Ask us about our BYO policy when you book.</p>
-            </div>
+            <button class="faq-question">Is axe throwing safe for my group?</button>
+            <div class="faq-answer"><p>Absolutely. Every session is led by a certified coach who enforces safety rules at all times.</p></div>
           </div>
-
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What's the minimum and maximum group size?
-              <span class="faq-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>We can accommodate groups as small as 4 and as large as 100+ with our Private Buyout and mobile trailer options. Contact us directly for groups over 50 so we can plan the best possible layout for you.</p>
-            </div>
+            <button class="faq-question">Can we bring food and drinks?</button>
+            <div class="faq-answer"><p>Yes! You're welcome to bring in food, non-alcoholic beverages, and cakes.</p></div>
           </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Do I need any experience?
-              <span class="faq-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>Not at all! Zero experience required. Our coaches start every group from scratch and have you hitting the target in minutes. First-timers consistently say it's the highlight of their experience.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What's your cancellation policy?
-              <span class="faq-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>Life happens — we get it. Cancellations made 72 hours or more before your event receive a full refund. Cancellations within 72 hours may be rescheduled to a different date within 60 days at no charge. Call us to discuss your situation.</p>
-            </div>
-          </div>
-
         </div>
       </section>
-
-            <section id="book-now" class="page-section container pt-large" style="margin-bottom: 4rem;">
-        <div class="conversion-container sleek-form-container split-layout" style="align-items: center;">
-
-          <div class="split-text text-center" style="padding-right: 1rem;">
-            <h2 class="section-title" style="margin-bottom: 0.75rem;">Ready to Throw?</h2>
-            <p class="lead-text" style="margin-bottom: 2rem;">Tell us about your group and we'll help you hit the mark. We'll confirm availability, walk you through the options, and take care of everything else.</p>
-
-            <a href="https://www.apple.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" style="margin-bottom: 1.5rem;">Book Your Event Now</a>
-
-            <p style="font-size: 0.95rem; color: var(--accent-dark); margin-bottom: 0.4rem;">Prefer to talk to someone?</p>
-            <a href="tel:+19073282288" class="highlight-phone">(907) 328-2288</a>
-          </div>
-
-          <div class="split-image" style="height: 100%;">
-            <img src="example-photo.jpg" alt="Axe Throwing Group Event" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; min-height: 320px;">
-          </div>
-
-        </div>
-      </section>
-
     </main>
 
-        <footer class="site-footer">
-      <div class="footer-container">
-
-        <div class="footer-column">
-          <h3 class="footer-heading">Alaska Axe Throwing Co.</h3>
-          <address class="footer-address">
-            <p>3501 Lathrop St, Unit B</p>
-            <p>Fairbanks, AK 99701, USA</p>
-          </address>
-          <p class="footer-phone">
-            <a href="tel:+19073282288">(907) 328-2288</a>
-          </p>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/AlaskaAxeCo" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
-              <img src="Facebook-icon.png" alt="Facebook" width="40" height="40" style="vertical-align: middle;" />
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h3 class="footer-heading">Explore</h3>
-          <nav aria-label="Footer Quick Links">
-            <a href="experiences.html">Experiences</a>
-            <a href="groups-events.html">Events</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="gift-cards.html">Gift Cards</a>
-          </nav>
-        </div>
-
-        <div class="footer-column">
-          <h3 class="footer-heading">Information</h3>
-          <nav aria-label="Footer Information Links">
-            <a href="faq.html">FAQ</a>
-            <a href="hours-directions.html">Hours &amp; Directions</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-          </nav>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <p>Copyright &copy; 2026 Alaska Axe Throwing Co. &mdash; All Rights Reserved.</p>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
     <script>
-      // FAQ Accordion
+      // Simplified FAQ Accordion
       document.querySelectorAll('.faq-question').forEach(btn => {
         btn.addEventListener('click', function () {
           const item = this.closest('.faq-item');
-          const isOpen = item.classList.contains('open');
-          // Close all
-          document.querySelectorAll('.faq-item').forEach(i => {
-            i.classList.remove('open');
-            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-          });
-          // Open clicked if it was closed
-          if (!isOpen) {
-            item.classList.add('open');
-            this.setAttribute('aria-expanded', 'true');
-          }
+          item.classList.toggle('open');
         });
       });
     </script>
