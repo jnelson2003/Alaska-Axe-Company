@@ -1,0 +1,57 @@
+:root {
+  --primary: #1f2937;
+  --accent: #b45309;
+  --bg: #f9fafb;
+  --text: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+header,
+footer {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+nav a,
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.book-now {
+  margin-left: auto;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+footer nav {
+  gap: 1rem;
+}
