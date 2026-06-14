@@ -84,3 +84,233 @@ nav a:hover,
 footer a:hover {
   text-decoration: none; 
   color: var(--accent-
+
+/* =========================================
+   6. PAGE SECTIONS & TYPOGRAPHY
+   ========================================= */
+.page-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid #dcd7ce; /* Subtle divider between sections */
+}
+
+.page-section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 2.5rem;
+}
+
+.text-center { text-align: center; }
+.mt-2 { margin-top: 1.5rem; }
+.lead-text { font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+
+/* =========================================
+   7. HERO SECTION
+   ========================================= */
+.hero {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 1.2rem;
+  color: var(--accent-light);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: #fff;
+  border-bottom: none; /* Removes the border from your global h2 rule */
+  padding-bottom: 0;
+}
+
+.hero-text {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 1.5rem auto;
+  color: var(--bg);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.tag-row span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* =========================================
+   8. BUTTONS
+   ========================================= */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px); /* Lifts the button slightly */
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* =========================================
+   9. GRID & CARDS
+   ========================================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-top: 4px solid var(--accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.card-featured {
+  border-top: 4px solid var(--primary);
+  background: #faf8f5;
+  transform: scale(1.02);
+}
+
+/* =========================================
+   10. LISTS & CALLOUTS
+   ========================================= */
+.highlight-section {
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.feature-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feature-list li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  font-weight: 500;
+}
+
+/* =========================================
+   11. FORMS
+   ========================================= */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.custom-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.custom-form label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.custom-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  background: #fdfdfd;
+  transition: border-color 0.2s ease;
+}
+
+.custom-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(91, 133, 157, 0.2);
+}
