@@ -264,7 +264,9 @@ nav a:hover, nav a.active { color: var(--accent); }
   to { transform: rotate(360deg); }
 }
 
-/* ---- EVERYTHING'S TAKEN CARE OF — Diagonal Blade Strip ---- */
+/* =========================================
+   8. Blade Section for Groups-Events page
+   ========================================= */
 
 .diagonal-features {
   padding: 0;
@@ -343,4 +345,14 @@ nav a:hover, nav a.active { color: var(--accent); }
 @media (max-width: 600px) {
   .blade-strip { grid-template-columns: 1fr; }
   .blade-cell { min-height: 260px; }
+}
+
+/* Increase the "Everything's Taken Care Of" text size */
+.diagonal-features .section-title {
+  font-size: 3.5rem; /* Adjust this number up or down until it looks perfect */
+}
+
+/* Add space below the row of photo cards */
+.blade-strip {
+  margin-bottom: 4rem; /* Increases the gap between the cards and the next section */
 }
