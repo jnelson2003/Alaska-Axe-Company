@@ -356,3 +356,27 @@ nav a:hover, nav a.active { color: var(--accent); }
 .blade-strip {
   margin-bottom: 4rem; /* Increases the gap between the cards and the next section */
 }
+
+
+/* =========================================
+   9. 404 Page
+   ========================================= */
+
+
+.target-container {
+    position: relative;
+    width: 300px;
+    margin: auto;
+}
+
+.target {
+    width: 100%;
+}
+
+.axe {
+    position: absolute;
+    top: 40%;
+    left: 75%;
+    width: 80px;
+    transform: rotate(25deg);
+}
