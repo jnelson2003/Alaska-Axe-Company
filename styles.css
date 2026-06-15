@@ -158,3 +158,70 @@ nav a:hover, nav a.active { color: var(--accent); }
 .faq-answer { display: none; padding: 0 1.5rem 1.5rem; color: var(--accent-dark); }
 .faq-item.open .faq-answer { display: block; }
 .faq-item.open .faq-question { color: var(--accent); }
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+.site-footer {
+  background-color: var(--primary); /* Deep blue background */
+  color: rgba(255, 255, 255, 0.75); /* Softer white/gray for text readability */
+  padding-top: 4rem;
+  margin-top: 4rem;
+}
+
+/* responsive 3-column grid */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.footer-heading {
+  color: var(--white);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Address & Text Reset */
+.footer-address { font-style: normal; }
+.footer-address p, .footer-phone p { margin-bottom: 0.5rem; }
+
+/* Links Setup */
+.footer-column a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-column a:hover {
+  color: var(--accent); /* Highlights on hover */
+}
+
+/* Stack the navigation links vertically */
+.footer-column nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem; 
+}
+
+/* Social Icon Hover Effect */
+.footer-social { margin-top: 1.5rem; }
+.footer-social img { transition: transform 0.3s ease; }
+.footer-social a:hover img { transform: translateY(-4px); }
+
+/* The Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2); /* Slightly darker shade to separate it */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
+  font-size: 0.9rem;
+}
+
+.footer-bottom p { margin: 0; }
